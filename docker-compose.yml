@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: web
+    volumes:
+      - .env:/var/www/html/.env
+      - ./src:/var/www/html
+    ports:
+      - "8080:8000"
+    networks:
+      - laravel_net
+    depends_on:
+      - mysql_db
+
+  mysql_db:
+    image: mariadb:10.6
+    container_name: maria_db
+    restart: always
+    tty: true
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234A
+      MYSQL_DATABASE: odju
+      SERVICE_NAME: mysql_db
+    volumes:
+      - .env:/var/www/html/.env
+      # - ./mariadb_data:/var/lib/mysql
+    networks:
+      - laravel_net
+
+volumes:
+  db_data: {}
+
+networks:
+  laravel_net:

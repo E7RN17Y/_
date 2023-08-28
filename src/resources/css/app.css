@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.login *{
+    font-family: poppins !important;
+}
+.ant-pagination-options{
+    display: none !important;
+}
+
+.highcharts-credits{
+    display: none;
+}
+.highcharts-grid-line { display: none ;}
+/* .ant-form button:hover{
+    background-color: #001529 !important;
+} */
+.users button:hover{ 
+    background-color: #001529 !important;;
+}
+.dashboard-layout *{ font-family: poppins !important;}
+
+.dashboard-layout .demo-logo-vertical { font-family: 'Gupter' !important;}
+
+:where(.css-dev-only-do-not-override-12upa3x).ant-btn-default:not(:disabled):hover{
+    color: white !important;
+    background-color: #001529 !important;
+    border: none !important;
+}
