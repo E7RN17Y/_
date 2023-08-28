@@ -6,38 +6,38 @@ docker-compose up --build -d
 ```
 #### Installation des dépendances
 ```docker
-docker exec -it odju_v2 supervisorctl restart composer:*
+docker exec -it web supervisorctl restart composer:*
 ```
 ```docker
-docker exec -it odju_v2 supervisorctl restart npm:*
+docker exec -it web supervisorctl restart npm:*
 ```
 
 #### Executer les migrations
 ```docker
-docker exec -it odju_v2 supervisorctl restart migrate:*
+docker exec -it web supervisorctl restart migrate:*
 ```
 
 #### Executer les seeders
 ```docker
-docker exec -it odju_v2 supervisorctl restart seeding:*
+docker exec -it web supervisorctl restart seeding:*
 ```
 
 #### Executer le build
 ```docker
-docker exec -it odju_v2 supervisorctl restart build:*
+docker exec -it web supervisorctl restart build:*
 ```
 
 #### Peupler la base de donnée pour la premiere fois
 ```docker
-docker exec -it odju_v2 supervisorctl restart feed_db-first-time-command:*
+docker exec -it web supervisorctl restart feed_db-first-time-command:*
 ```
 
 #### Lancer le planificateur de taches
 ```docker
-docker exec -it odju_v2 supervisorctl restart cronservice:*
+docker exec -it web supervisorctl restart cronservice:*
 ```
 
-#### Lancer le serveur odju_v2
+#### Lancer le serveur web
 ```docker
-docker exec -it odju_v2 supervisorctl restart serve:*
+docker exec -it web supervisorctl restart serve:*
 ```
